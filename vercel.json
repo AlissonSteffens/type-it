@@ -1,0 +1,8 @@
+{
+    "name": "type-it",
+    "alias": "type-it.now.sh",
+    "version": 2,
+    "env": {
+        "MONGODB_URI": "@type-it-mongodb-uri"
+    }
+}
