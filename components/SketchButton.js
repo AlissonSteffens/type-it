@@ -38,8 +38,8 @@ class SketchButton extends React.Component {
     const styles = reactCSS({
       'default': {
         color: {
-          width: '64px',
-          height: '64px',
+          width: '50px',
+          height: '50px',
           borderRadius: '2px',
           background: `rgba(${ this.state.color.r }, ${ this.state.color.g }, ${ this.state.color.b }, ${ this.state.color.a })`,
         },

@@ -7,17 +7,23 @@ import ReactGA from 'react-ga';
 let _colorOne = {};
 let _colorTwo = {};
 let _message = "";
+let _loop = false;
 
 const handleChange = (event) => {
   _message = event.target.value;
 }
 
+const handleCheckChange = (event) => {
+  _loop = event.target.checked;
+  console.log(_loop)
+}
 const postToAPI = () => {
 
   let details = {
       'message': _message,
       'col1': _colorOne.getColor(),
       'col2': _colorTwo.getColor(),
+      'loop': _loop,
       'hash': stringHash(_message+_colorOne.getColor()+_colorTwo.getColor())
   };
 
@@ -90,6 +96,13 @@ export default function Home() {
             <SketchButton ref={(ref) => _colorOne = ref}/>
             <SketchButton ref={(ref) => _colorTwo = ref}/>
           </div>
+
+          <div>
+            <input type="checkbox" id="loop" onChange={handleCheckChange} name="scales"></input>
+            <label htmlFor="loop">{'  '}Want it to loop?</label>
+          </div>
+          
+
 
           <div className="center">
           <button className="zi-btn success" onClick={doit}>Create Page</button>

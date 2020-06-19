@@ -61,7 +61,8 @@ class Typer extends Component {
                     strings={[sms.message]}
                     typeSpeed={75}
                     backSpeed={50}
-                    loop
+                    loop = {sms.loop == 'true'}
+
                 />
                 :""
             }
