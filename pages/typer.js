@@ -4,8 +4,8 @@ import Typed from 'react-typed';
 import queryString from 'query-string';
 import ReactGA from 'react-ga';
 
-const API = 'https://type-it.vercel.app/api/message/';
-// const API = 'http://localhost:3000/api/message/';
+// const API = 'https://type-it.vercel.app/api/message/';
+const API = 'http://localhost:3000/api/message/';
 function initializeReactGA() {
     ReactGA.initialize('UA-140824797-7')
 }
@@ -72,7 +72,8 @@ class Typer extends Component {
         </main>
 
         <footer>
-      <p><b>code</b> with <b>❤</b> by <a href="https://alissonsteffens.com/">Alisson</a> powered by {' '}
+      
+      <p><a href="https://type-it.vercel.app/">Type It</a> is <b>coded</b> with <b>❤</b> by <a href="https://alissonsteffens.com/">Alisson</a> and powered by {' '}
           <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
@@ -83,7 +84,12 @@ class Typer extends Component {
       </footer>
 
         <style jsx>{`
-          
+            .made{
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                color: #fff;
+            }
             .hero{
                 color: #fff !important;
             }
@@ -137,7 +143,7 @@ class Typer extends Component {
             align-items: center;
             background: #fff;
             }
-
+            
             footer img {
             margin-left: 0.5rem;
             }
