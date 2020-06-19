@@ -1,6 +1,7 @@
 const url = require('url')
 const MongoClient = require('mongodb').MongoClient
 let cachedDb = null
+const requestIp = require('request-ip')
 
 async function connectToDatabase(uri) {
   if (cachedDb) {
@@ -23,15 +24,17 @@ module.exports = async (req, res) => {
 
 
     switch (req.method) {
-        case 'GET':
-            console.log(req.query)
-            collection.find({}).toArray().then(result => {
-                res.status(200).json(result)
-            })
+        // case 'GET':
+        //     console.log(req.query)
+        //     collection.find({}).toArray().then(result => {
+        //         res.status(200).json(result)
+        //     })
             
-            break
+        //     break
         case 'POST':
             const data = req.body
+            data.extIp = requestIp.getClientIp(req)
+            data.time = Date.now()
             console.log(data)
             collection.insertOne(data).then(result => {
                 collection.findOne(result.insertedId).then(r => {

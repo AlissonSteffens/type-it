@@ -5,7 +5,7 @@ import queryString from 'query-string';
 import ReactGA from 'react-ga';
 
 const API = 'https://type-it.vercel.app/api/message/';
-
+// const API = 'http://localhost:3000/api/message/';
 function initializeReactGA() {
     ReactGA.initialize('UA-140824797-7')
 }
