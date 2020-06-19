@@ -41,7 +41,7 @@ class Typer extends Component {
         style={
                 sms.message?
                 {background: 'linear-gradient(136deg, '+sms.col1+', '+sms.col2+')',
-                animation: 'AnimationName 30s ease infinite'
+                backgroundSize: '400% 400%'
                 }
                 :{}
             }
@@ -105,12 +105,17 @@ class Typer extends Component {
             margin: 0; 
             }
             .container {
-            min-height: 100vh;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+                min-height: 100vh;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-size: 400% 400%;
+                -webkit-animation: AnimationName 20s ease infinite;
+                -moz-animation: AnimationName 20s ease infinite;
+                -o-animation: AnimationName 20s ease infinite;
+                animation: AnimationName 20s ease infinite;
             }
 
             main {
@@ -170,22 +175,6 @@ class Typer extends Component {
             .logo {
             height: .75em;
             }
-
-        `}</style>
-
-        <style jsx global>{`
-            html,
-            body {
-            padding: 0;
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-                Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-                sans-serif;
-            }
-
-            * {
-            box-sizing: border-box;
-            }
             @-webkit-keyframes AnimationName {
                 0%{background-position:97% 0%}
                 50%{background-position:4% 100%}
@@ -206,6 +195,23 @@ class Typer extends Component {
                 50%{background-position:4% 100%}
                 100%{background-position:97% 0%}
             }
+
+        `}</style>
+
+        <style jsx global>{`
+            html,
+            body {
+            padding: 0;
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+                Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+                sans-serif;
+            }
+
+            * {
+            box-sizing: border-box;
+            }
+            
         `}</style>
         </div>
     )
