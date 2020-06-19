@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Head from 'next/head'
 import Typed from 'react-typed';
-import queryString from 'queryString';
+import queryString from 'query-string';
 
 
 const API = 'http://localhost:3000/api/message/';

@@ -61,7 +61,7 @@ export default function Home() {
 
       <main>
         <h1 className="title">
-          Welcome to
+          Welcome to{' '}
           <Typed
             strings={[' <a href="#">Type It!</a>']}
             typeSpeed={75}
