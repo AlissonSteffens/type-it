@@ -175,7 +175,15 @@ export default function Home() {
           justify-content: center;
           align-items: center;
         }
-
+        footer p{
+          font-size: .75rem;
+          }
+          @media (min-width: 600px) 
+          {
+              footer p{
+                  font-size: 1rem;
+              }
+          }
         footer img {
           margin-left: 0.5rem;
         }

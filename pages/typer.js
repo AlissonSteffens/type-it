@@ -4,8 +4,8 @@ import Typed from 'react-typed';
 import queryString from 'query-string';
 import ReactGA from 'react-ga';
 
-const API = 'https://type-it.vercel.app/api/message/';
-// const API = 'http://localhost:3000/api/message/';
+// const API = 'https://type-it.vercel.app/api/message/';
+const API = 'http://localhost:3000/api/message/';
 function initializeReactGA() {
     ReactGA.initialize('UA-140824797-7')
 }
@@ -92,6 +92,7 @@ class Typer extends Component {
             }
             .hero{
                 color: #fff !important;
+                padding: 1rem;
             }
             .zi-card{
             width:100%;
@@ -144,6 +145,16 @@ class Typer extends Component {
             background: #fff;
             }
             
+            footer p{
+            font-size: .75rem;
+            }
+            @media (min-width: 600px) 
+            {
+                footer p{
+                    font-size: 1rem;
+                }
+            }
+
             footer img {
             margin-left: 0.5rem;
             }
