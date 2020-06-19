@@ -2,21 +2,26 @@ import React, { Component } from 'react';
 import Head from 'next/head'
 import Typed from 'react-typed';
 import queryString from 'query-string';
+import ReactGA from 'react-ga';
 
+const API = 'https://type-it.vercel.app/api/message/';
 
-const API = 'http://localhost:3000/api/message/';
+function initializeReactGA() {
+    ReactGA.initialize('UA-140824797-7')
+}
 
-
+  
 class Typer extends Component {
     constructor(props) {
         super(props);
-     
+        
         this.state = {
           sms: {},
         };
     }
 
     componentDidMount() {
+        initializeReactGA()
         const parsed = queryString.parse(location.search);
         let cod = parsed.code;
         fetch(API + cod)
@@ -45,6 +50,7 @@ class Typer extends Component {
             <title>Type It</title>
             <link rel="icon" href="/favicon.ico" />
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@zeit-ui/style@latest/dist/style.css"></link>
+            
         </Head>
 
         <main>
@@ -65,7 +71,7 @@ class Typer extends Component {
         </main>
 
         <footer>
-      <p><b class="code">code</b> with <b class="heart">❤</b> by <a href="https://alissonsteffens.com/">Alisson</a> powered by {' '}
+      <p><b>code</b> with <b>❤</b> by <a href="https://alissonsteffens.com/">Alisson</a> powered by {' '}
           <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"

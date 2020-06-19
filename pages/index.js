@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Typed from 'react-typed';
 import SketchButton from '../components/SketchButton';
 import stringHash from 'string-hash';
-
+import ReactGA from 'react-ga';
 
 let _colorOne = {};
 let _colorTwo = {};
@@ -43,13 +43,17 @@ const postToAPI = () => {
       });
 };
 
+function initializeReactGA() {
+  ReactGA.initialize('UA-140824797-7')
+}
+
 export default function Home() {
 
   const doit = () =>{
     console.log(_colorOne.getColor(), _colorTwo.getColor(), _message, stringHash(_message+_colorOne+_colorTwo))
     postToAPI()
   }
-  
+  initializeReactGA()
 
   return (
     <div className="container">
@@ -57,6 +61,7 @@ export default function Home() {
         <title>Type It</title>
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@zeit-ui/style@latest/dist/style.css"></link>
+        
       </Head>
 
       <main>
@@ -95,7 +100,7 @@ export default function Home() {
       </main>
 
       <footer>
-      <p><b class="code">code</b> with <b class="heart">❤</b> by <a href="https://alissonsteffens.com/">Alisson</a> powered by {' '}
+      <p><b>code</b> with <b >❤</b> by <a href="https://alissonsteffens.com/">Alisson</a> powered by {' '}
           <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
