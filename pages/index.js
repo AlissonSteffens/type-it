@@ -76,8 +76,6 @@ export default function Home() {
           <Typed
             strings={[' <a href="#">Type It!</a>']}
             typeSpeed={75}
-            backSpeed={50}
-            loop
           />
         </h1>
 
