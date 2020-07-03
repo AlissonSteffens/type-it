@@ -9,8 +9,13 @@ let _colorOne = {};
 let _colorTwo = {};
 let _message = "";
 let _loop = false;
+let _audio = "";
 const handleChange = (event) => {
   _message = event.target.value;
+}
+
+const handleAudioChange = (event) => {
+  _audio = event.target.value;
 }
 
 
@@ -22,6 +27,7 @@ const postToAPI = () => {
 
   let details = {
       'message': _message,
+      'audio': _audio,
       'col1': _colorOne.getColor(),
       'col2': _colorTwo.getColor(),
       'loop': _loop,
@@ -91,6 +97,9 @@ export default function Home() {
           
             </p>
           <input className="zi-input" onChange={handleChange} placeholder="It's typing the message"></input>
+
+          <p>An Audio? (url)</p>
+          <input className="zi-input" onChange={handleAudioChange} placeholder="video code"></input>
 
           <p>And two colors for the background</p>
           <div className="center colors">

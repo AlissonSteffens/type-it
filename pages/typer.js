@@ -69,6 +69,15 @@ class Typer extends Component {
             
             
             </h1>
+            {
+                sms.audio?
+                <iframe width="0" height="0" src={"https://www.youtube.com/embed/"+sms.audio+"?autoplay=1"} 
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+
+                </iframe>
+                :
+                ""
+            }
         </main>
 
         <footer>
