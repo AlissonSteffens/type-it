@@ -106,7 +106,7 @@ export default function Home() {
 
 
           <div className="center">
-          <button className="zi-btn success" onClick={doit}>Create Page</button>
+          <button className="zi-btn success" onClick={doit}>Create Message</button>
           </div>
           
           
